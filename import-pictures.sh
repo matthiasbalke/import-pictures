@@ -3,10 +3,9 @@
 # run script to prepare images for sorting
 docker run \
   --mount type=bind,src=$(pwd)/import,dst=/source \
-  --mount type=bind,src=$(pwd)/process-images.sh,dst=/process-images.sh \
-  --rm -it ghcr.io/matthiasbalke/imagemagick:0.1.1-7.1.1.13-r1
+  --mount type=bind,src=$(pwd)/process-images.py,dst=/process-images.py \
+  --rm -it ghcr.io/matthiasbalke/imagemagick:0.2.0-7.1.1.13-r1
 
-# sort images
 docker run \
   --mount type=bind,src=$(pwd)/import,dst=/source \
   --mount type=bind,src=$(pwd),dst=/target \
