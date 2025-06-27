@@ -9,5 +9,5 @@ docker run \
 docker run \
   --mount type=bind,src=$(pwd)/import,dst=/source \
   --mount type=bind,src=$(pwd),dst=/target \
-  --rm -it ghcr.io/matthiasbalke/sortphotos:0.1.1 \
-  --test --recursive --sort %Y-%m-%d /source /target
+  --rm -it ghcr.io/matthiasbalke/sortphotos:0.2.0 \
+  --exiftool /usr/bin/exiftool --test --recursive --sort %Y-%m-%d /source /target

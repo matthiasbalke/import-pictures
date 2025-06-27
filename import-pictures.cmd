@@ -10,7 +10,7 @@ REM sort images
 docker run ^
   --mount type=bind,src=%~dp0\import,dst=/source ^
   --mount type=bind,src=%~dp0,dst=/target ^
-  --rm -it ghcr.io/matthiasbalke/sortphotos:0.1.1 ^
-  --test --recursive --sort %%Y-%%m-%%d /source /target
+  --rm -it ghcr.io/matthiasbalke/sortphotos:0.2.0 ^
+  --exiftool /usr/bin/exiftool --test --recursive --sort %%Y-%%m-%%d /source /target
 
 pause
